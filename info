@@ -17,3 +17,15 @@ For the Frontend (Nginx) Container:
 working_dir is not explicitly set for the frontend service.
 In the case of the Nginx container, the default working directory might already be set to a location that makes sense for Nginx to serve static content. 
 Nginx generally serves static files from /usr/share/nginx/html by default, so there might not be a need to change the working directory explicitly.
+
+
+#commands
+docker-compose up  - bring up the containers
+
+#incase any change has been made
+docker-compose build
+
+docker-compose up
+
+#to bring it down
+docker-compose down
