@@ -1,0 +1,14 @@
+version: 3
+services:
+  frontend:
+    image: nginx:latest
+    ports:
+      - 8080:80
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+    
+  backend:
+    image: node:14
+    working_dir: /app
+    volumes:
+    - ./backend:/app
