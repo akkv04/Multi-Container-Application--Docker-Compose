@@ -11,4 +11,5 @@ services:
     image: node:14
     working_dir: /app
     volumes:
-    - ./backend:/app
+      - ./backend:/app
+    command: npm start
