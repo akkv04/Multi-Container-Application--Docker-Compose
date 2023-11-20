@@ -1,0 +1,19 @@
+? why the command is only needed for node container
+
+>>>>for the backend 
+The command: npm start is used to start the Node.js application.
+Node.js applications typically require an explicit start command. In this case, npm start is a common script defined in the package.json file of a Node.js project to launch the application.
+>>>>For the Frontend (Nginx) Container:
+Nginx is a web server and does not need an explicit start command in the same way as an application with a main entry point.
+When the Nginx container starts, it automatically begins serving content from the specified location (/usr/share/nginx/html). Nginx uses its default configuration to start serving static content.
+
+? why working dir is only needed for front end container
+
+For the Backend (Node.js) Container:
+working_dir: /app is set for the backend service.
+This is likely because Node.js applications often have a specific directory structure, and the application code is typically located in a specific directory. S
+etting the working directory ensures that when the container starts, it changes its current directory to /app, and subsequent commands (like npm start) are executed relative to that directory.
+For the Frontend (Nginx) Container:
+working_dir is not explicitly set for the frontend service.
+In the case of the Nginx container, the default working directory might already be set to a location that makes sense for Nginx to serve static content. 
+Nginx generally serves static files from /usr/share/nginx/html by default, so there might not be a need to change the working directory explicitly.
